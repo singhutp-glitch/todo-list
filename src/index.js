@@ -11,6 +11,11 @@ class project
     {
         this.taskList.push(new task(title,description, dueDate ,priority));
     }
+    deleteTask(num)
+    {
+        this.taskList.splice(num,1);
+        console.log(this.taskList.length);
+    }
 }
 class task
 {
@@ -34,3 +39,4 @@ class task
 const project1=new project("midsem");
 project1.addTask("test prep","maths test","1-1-25",1);
 project1.taskList[0].showTask();
+project1.deleteTask(0);
