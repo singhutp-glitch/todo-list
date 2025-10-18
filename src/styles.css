@@ -1,3 +1,19 @@
-body{
-    background-color: rebeccapurple;
+*{
+    outline: auto;
+}
+.contain{
+    display: flex;
+
+}
+nav{
+    font-size: 40px;
+    padding: 10px;
+}
+.projects{
+    flex:1 0 auto;
+    min-height: 100vh;
+}
+.tasks{
+    flex:4 0 auto;
+    min-height: 100vh;
 }

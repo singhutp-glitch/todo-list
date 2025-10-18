@@ -15,6 +15,7 @@ class project
         this.taskList.splice(num,1);
         console.log(this.taskList.length);
     }
+    
 }
 class task
 {
@@ -37,14 +38,14 @@ class projectList
 {
     constructor()
     {}
-    projList=[];
+    projects=[];
     addProject(title)
     {
-        this.projList.push(new project(title));
+        this.projects.push(new project(title));
     }
     deleteProject(num)
     {
-        this.projList.splice(num,1);
-        console.log(this.projList.length);
+        this.projects.splice(num,1);
+        console.log(this.projects.length);
     }
 }
