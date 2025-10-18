@@ -17,3 +17,6 @@ nav{
     flex:4 0 auto;
     min-height: 100vh;
 }
+.projectBtn{
+    display: block;
+}

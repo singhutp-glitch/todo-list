@@ -11,6 +11,11 @@ class domStuff
             projectsDiv.appendChild(projectCard)
         }
         this.displayProject(projectItem.projects[0]);
+        const projectBtn=document.querySelector('.projectBtn');
+        projectBtn.addEventListener("click",(event)=>{
+            console.log("add project");
+
+        })
 
     }
     displayProject(project)
