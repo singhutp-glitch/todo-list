@@ -1,7 +1,7 @@
 import "./styles.css";
 import { projectList } from "./project";
 
-console.log('hello');
+
 
 //main
 const listOfProjects=new projectList();
