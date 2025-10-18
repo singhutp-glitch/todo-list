@@ -34,9 +34,25 @@ class task
         console.log(this.priority);
     }
 }
-
+class projectList
+{
+    constructor()
+    {}
+    projList=[];
+    addProject(title)
+    {
+        this.projList.push(new project(title));
+    }
+    deleteProject(num)
+    {
+        this.projList.splice(num,1);
+        console.log(this.projList.length);
+    }
+}
 //main
-const project1=new project("midsem");
-project1.addTask("test prep","maths test","1-1-25",1);
-project1.taskList[0].showTask();
-project1.deleteTask(0);
+const listOfProjects=new projectList();
+listOfProjects.addProject("midsem");
+listOfProjects.projList[0].addTask("test prep","maths test","1-1-25",1)
+listOfProjects.projList[0].taskList[0].showTask();
+listOfProjects.projList[0].deleteTask(0);
+listOfProjects.deleteProject(0);
