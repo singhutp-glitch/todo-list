@@ -6,13 +6,18 @@ class domStuff
     {
         for( let project of projectItem.projects)
         {
-            const projectCard=document.createElement('div');
-            projectCard.textContent=project.title;
-            projectsDiv.appendChild(projectCard)
+            this.displayNewProject(project);
+
         }
         this.displayProject(projectItem.projects[0]);
         
 
+    }
+    displayNewProject(project)
+    {
+        const projectCard=document.createElement('div');
+        projectCard.textContent=project.title;
+        projectsDiv.appendChild(projectCard)
     }
     
     displayProject(project)
