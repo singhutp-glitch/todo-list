@@ -35,3 +35,13 @@ taskInputBtn.addEventListener('click',(event)=>{
     project.addTask(taskDetail.taskTitle,taskDetail.taskDescription,taskDetail.taskDate,taskDetail.taskPriority);
     domItem.displayNewTask(project.taskList[project.taskList.length-1]);
 })
+const projectsDiv=document.querySelector('div.projects');
+projectsDiv.addEventListener('click',(event)=>{
+    console.log(event.target.classList.value);
+    if(event.target.classList.value==="projectCard")
+    {
+        const project=projectItem.projects.find((element)=>{return(element.title===event.target.textContent)})
+        console.log(event.target.textContent);
+        domItem.displayProject(project);
+    }
+})

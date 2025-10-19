@@ -52,8 +52,9 @@ class domStuff
     displayNewProject(project)
     {
         const projectCard=document.createElement('div');
+        projectCard.classList.add('projectCard');
         projectCard.textContent=project.title;
-        projectsDiv.appendChild(projectCard)
+        projectsDiv.appendChild(projectCard);
     }
     displayNewTask(task)
     {
@@ -64,6 +65,7 @@ class domStuff
     
     displayProject(project)
     {
+        tasksDiv.innerHTML="";
         this.currentProjectId=project.id;
         const newTaskBtn=document.createElement('button');
         newTaskBtn.textContent="Add Task";
@@ -71,7 +73,7 @@ class domStuff
         tasksDiv.appendChild(newTaskBtn);
         if(project.taskList.length===0)
         {
-            tasksDiv.textContent="NO Tasks";
+            // tasksDiv.textContent+="NO Tasks";
         }
         else
         {
