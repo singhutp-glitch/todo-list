@@ -20,7 +20,7 @@ inputBtnElement.addEventListener('click',function addNewProject(){
     projectItem.addProject(value);
     domItem.displayNewProject(projectItem.projects[projectItem.projects.length-1]);
 })
-tasksDiv.addEventListener("click",(event)=>{
+tasksDiv.addEventListener("click",function newTaskFormAndDelete(event){
     if(event.target.classList.value==="taskBtn")
     {
         domItem.showTaskDialog();
@@ -38,7 +38,7 @@ tasksDiv.addEventListener("click",(event)=>{
     console.log(event.target.classList.value);   
 })
 const taskInputBtn=document.querySelector('.inputTask');
-taskInputBtn.addEventListener('click',(event)=>{
+taskInputBtn.addEventListener('click',function addNewTask(event){
     console.log('add task');
    
     const project=projectItem.projects.find((element)=>{return (element.id===domItem.getcurrentProjectId())});
@@ -47,7 +47,7 @@ taskInputBtn.addEventListener('click',(event)=>{
     domItem.displayNewTask(project.taskList[project.taskList.length-1]);
 })
 const projectsDiv=document.querySelector('div.projects');
-projectsDiv.addEventListener('click',(event)=>{
+projectsDiv.addEventListener('click',function changeAndDeleteProjct(event){
     console.log(event.target.parentElement.firstElementChild);
     if(event.target.classList.value==="projectCard")
     {
