@@ -12,9 +12,7 @@ const domItem=new domStuff(projectItem);
 const tasksDiv=document.querySelector('div.tasks');
 const projectBtn=document.querySelector('.projectBtn');
 projectBtn.addEventListener("click",(event)=>{
-
-    console.log("add project");
-    domItem.showDialog();
+    domItem.showProjectDialog();
 })
 const inputBtnElement=document.querySelector('.inputProject');
 inputBtnElement.addEventListener('click',()=>{
@@ -25,20 +23,15 @@ inputBtnElement.addEventListener('click',()=>{
 tasksDiv.addEventListener("click",(event)=>{
     if(event.target.classList.value==="taskBtn")
     {
-        const taskDialog=document.querySelector('dialog#newTask');
-        taskDialog.showModal();
-        
+        domItem.showTaskDialog();
     }   
 })
 const taskInputBtn=document.querySelector('.inputTask');
 taskInputBtn.addEventListener('click',(event)=>{
     console.log('add task');
-    const taskTitleElement =document.querySelector('input#taskTitle');
-    const taskDescriptionElement =document.querySelector('input#taskDescription');
-    const taskDateElement =document.querySelector('input#Duedate');
-    const taskPriorityElement =document.querySelector('input#priority');
+   
     const project=projectItem.projects.find((element)=>{return (element.id===domItem.getcurrentProjectId())});
-    project.addTask(taskTitleElement .value,taskDescriptionElement.value,taskDateElement.value,taskPriorityElement.value)
-    console.log(project.taskList[project.taskList.length-1]);
+    const taskDetail=domItem.getTaskDetail();
+    project.addTask(taskDetail.taskTitle,taskDetail.taskDescription,taskDetail.taskDate,taskDetail.taskPriority);
     domItem.displayNewTask(project.taskList[project.taskList.length-1]);
 })

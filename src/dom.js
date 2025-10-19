@@ -14,6 +14,18 @@ class domStuff
         
 
     }
+    getTaskDetail()
+    {
+        const taskTitleElement =document.querySelector('input#taskTitle');
+        const taskDescriptionElement =document.querySelector('input#taskDescription');
+        const taskDateElement =document.querySelector('input#Duedate');
+        const taskPriorityElement =document.querySelector('input#priority');
+        const taskTitle=taskTitleElement .value;
+        const taskDescription=taskDescriptionElement.value;
+        const taskDate=taskDateElement.value;
+        const taskPriority=taskPriorityElement.value;
+        return {taskTitle,taskDescription,taskDate,taskPriority};
+    }
     getcurrentProjectId()
     {
         return this.currentProjectId;
@@ -25,9 +37,13 @@ class domStuff
         inputElement.value="";
         return value;
     }
-
+    showTaskDialog()
+    {
+        const taskDialog=document.querySelector('dialog#newTask');
+        taskDialog.showModal();
+    }
     
-    showDialog()
+    showProjectDialog()
     {
 
         const projectDialog=document.querySelector('dialog#newProject');
