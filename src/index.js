@@ -24,7 +24,19 @@ tasksDiv.addEventListener("click",(event)=>{
     if(event.target.classList.value==="taskBtn")
     {
         domItem.showTaskDialog();
-    }   
+    }
+    else if(event.target.classList.value==='deleteTask')
+    {
+        const project=projectItem.projects.find((element)=>{
+            return (element.id===domItem.getcurrentProjectId());
+        })
+        const taskTitle=event.target.parentElement.firstElementChild.textContent;
+        const taskIndex=project.taskList.findIndex((element)=>{return (element.title===taskTitle)});
+        project.deleteTask(taskIndex);
+        console.log(taskIndex);
+        domItem.remove(event.target.parentElement);
+    }
+    console.log(event.target.classList.value);   
 })
 const taskInputBtn=document.querySelector('.inputTask');
 taskInputBtn.addEventListener('click',(event)=>{
