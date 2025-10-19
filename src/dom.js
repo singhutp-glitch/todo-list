@@ -70,7 +70,15 @@ class domStuff
     displayNewTask(task)
     {
         const taskCard=document.createElement('div');
-        taskCard.textContent=task.title;
+        const taskName=document.createElement('div');
+        const deleteBtn=document.createElement('button');
+        taskName.classList.add('taskCard');
+        deleteBtn.classList.add('deleteTask');
+        taskCard.classList.add('taskCardUp');
+        deleteBtn.textContent="Delete";
+        taskName.textContent=task.title;
+        taskCard.appendChild(taskName);
+        taskCard.appendChild(deleteBtn);
         tasksDiv.appendChild(taskCard);
     }
     cleanTaskDiv()

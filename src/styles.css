@@ -38,3 +38,12 @@ form#newTask>input{
     display: flex;
     justify-content: space-between;
 }
+.taskCard{
+    display: inline;
+    padding-right: 5px;
+    flex: 1 1 auto;
+}
+.taskCardUp{
+    display: flex;
+    justify-content: space-between;
+}
