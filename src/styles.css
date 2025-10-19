@@ -19,6 +19,7 @@ nav{
 .tasks{
     flex:4 0 auto;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 .projectBtn{
     display: block;

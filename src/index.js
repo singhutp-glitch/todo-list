@@ -11,11 +11,11 @@ projectItem.projects[0].taskList[0].showTask();
 const domItem=new domStuff(projectItem);
 const tasksDiv=document.querySelector('div.tasks');
 const projectBtn=document.querySelector('.projectBtn');
-projectBtn.addEventListener("click",(event)=>{
+projectBtn.addEventListener("click",function showNewProjectForm(event){
     domItem.showProjectDialog();
 })
 const inputBtnElement=document.querySelector('.inputProject');
-inputBtnElement.addEventListener('click',()=>{
+inputBtnElement.addEventListener('click',function addNewProject(){
     let value=domItem.getProjectTitle();
     projectItem.addProject(value);
     domItem.displayNewProject(projectItem.projects[projectItem.projects.length-1]);
@@ -33,7 +33,6 @@ tasksDiv.addEventListener("click",(event)=>{
         const taskTitle=event.target.parentElement.firstElementChild.textContent;
         const taskIndex=project.taskList.findIndex((element)=>{return (element.title===taskTitle)});
         project.deleteTask(taskIndex);
-        console.log(taskIndex);
         domItem.remove(event.target.parentElement);
     }
     console.log(event.target.classList.value);   
