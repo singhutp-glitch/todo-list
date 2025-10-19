@@ -12,6 +12,9 @@ nav{
 .projects{
     flex:1 0 auto;
     min-height: 100vh;
+    box-sizing: border-box;
+    width:150px;
+    
 }
 .tasks{
     flex:4 0 auto;

@@ -37,14 +37,19 @@ taskInputBtn.addEventListener('click',(event)=>{
 })
 const projectsDiv=document.querySelector('div.projects');
 projectsDiv.addEventListener('click',(event)=>{
-    console.log(event.target.classList.value);
+    console.log(event.target.parentElement.firstElementChild);
     if(event.target.classList.value==="projectCard")
     {
         const project=projectItem.projects.find((element)=>{return(element.title===event.target.textContent)})
         domItem.displayProject(project);
     }
-    else if(event.target.classList.value==="deleteBtn")
+    else if(event.target.classList.value==="deleteProject")
     {
-        console.log('delete project');
+        const nameElement=event.target.parentElement.firstElementChild;
+        const projectIndex=projectItem.projects.findIndex((element)=>{return(element.title===nameElement.textContent)});
+        console.log(projectIndex);
+        projectItem.projects.splice(projectIndex,1);
+        event.target.parentElement.remove();
+
     }
 })
