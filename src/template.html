@@ -8,11 +8,25 @@
 <body>
     <dialog id="newProject" closedby='any'>
         <form id="newProject" action="#" method="dialog">
-            <label >Title:</label>
+            <label for="projectTitle">Title:</label>
             <input id="projectTitle">
             <button type="submit" class="inputProject">Create New Project</button>
         </form>
     </dialog>
+     <dialog id="newTask" closedby='any'>
+        <form id="newTask" action="#" method="dialog">
+            <label for="taskTitle">Title:</label>
+            <input id="taskTitle">
+            <label for="taskDescription">Description:</label>
+            <input id="taskDescription">
+            <label for="Duedate">Duedate:</label>
+            <input id="Duedate" type="date">
+            <label for="priority" >Prority:</label>
+            <input id="priority">
+            <button type="submit" class="inputProject">Create New Task</button>
+        </form>
+    </dialog>
+   
     <nav class="navi">Todo List</nav>
     <div class="contain">
         <div class="projects">

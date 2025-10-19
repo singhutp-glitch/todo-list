@@ -23,3 +23,6 @@ nav{
 .taskBtn{
     display:block;
 }
+form#newTask>input{
+    display: block;
+}
