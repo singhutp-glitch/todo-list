@@ -2,6 +2,7 @@ export {domStuff}
 
 class domStuff
 {
+    currentProjectId;
     constructor(projectItem)
     {
         for( let project of projectItem.projects)
@@ -12,6 +13,10 @@ class domStuff
         this.displayProject(projectItem.projects[0]);
         
 
+    }
+    getcurrentProjectId()
+    {
+        return this.currentProjectId;
     }
     getProjectTitle()
     {
@@ -34,11 +39,17 @@ class domStuff
         projectCard.textContent=project.title;
         projectsDiv.appendChild(projectCard)
     }
+    displayNewTask(task)
+    {
+        const taskCard=document.createElement('div');
+        taskCard.textContent=task.title;
+        tasksDiv.appendChild(taskCard);
+    }
     
     displayProject(project)
     {
+        this.currentProjectId=project.id;
         const newTaskBtn=document.createElement('button');
-        newTaskBtn.setAttribute('id',project.id);
         newTaskBtn.textContent="Add Task";
         newTaskBtn.classList.add('taskBtn');
         tasksDiv.appendChild(newTaskBtn);
@@ -50,9 +61,7 @@ class domStuff
         {
             for(let task of project.taskList)
             {
-                const taskCard=document.createElement('div');
-                taskCard.textContent=task.title;
-                tasksDiv.appendChild(taskCard);
+                this.displayNewTask(task);
             }
         }
     }

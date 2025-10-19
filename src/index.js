@@ -27,5 +27,18 @@ tasksDiv.addEventListener("click",(event)=>{
     {
         const taskDialog=document.querySelector('dialog#newTask');
         taskDialog.showModal();
-    }
+        
+    }   
+})
+const taskInputBtn=document.querySelector('.inputTask');
+taskInputBtn.addEventListener('click',(event)=>{
+    console.log('add task');
+    const taskTitleElement =document.querySelector('input#taskTitle');
+    const taskDescriptionElement =document.querySelector('input#taskDescription');
+    const taskDateElement =document.querySelector('input#Duedate');
+    const taskPriorityElement =document.querySelector('input#priority');
+    const project=projectItem.projects.find((element)=>{return (element.id===domItem.getcurrentProjectId())});
+    project.addTask(taskTitleElement .value,taskDescriptionElement.value,taskDateElement.value,taskPriorityElement.value)
+    console.log(project.taskList[project.taskList.length-1]);
+    domItem.displayNewTask(project.taskList[project.taskList.length-1]);
 })
