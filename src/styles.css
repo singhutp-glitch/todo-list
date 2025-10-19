@@ -26,3 +26,7 @@ nav{
 form#newTask>input{
     display: block;
 }
+.projectName{
+    display: inline;
+    padding-right: 5px;
+}

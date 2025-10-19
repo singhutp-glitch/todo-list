@@ -52,8 +52,15 @@ class domStuff
     displayNewProject(project)
     {
         const projectCard=document.createElement('div');
+        const projectName=document.createElement('div');
+        const deleteBtn=document.createElement('button');
+        projectName.classList.add('projectName');
+        deleteBtn.classList.add('deleteProject');
         projectCard.classList.add('projectCard');
-        projectCard.textContent=project.title;
+        projectName.textContent=project.title;
+        deleteBtn.textContent="Delete";
+        projectCard.appendChild(projectName);
+        projectCard.appendChild(deleteBtn);
         projectsDiv.appendChild(projectCard);
     }
     displayNewTask(task)
