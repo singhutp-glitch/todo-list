@@ -26,7 +26,12 @@ nav{
 form#newTask>input{
     display: block;
 }
-.projectName{
+.projectCard{
     display: inline;
     padding-right: 5px;
+    flex: 1 1 auto;
+}
+.projectCardUp{
+    display: flex;
+    justify-content: space-between;
 }

@@ -54,9 +54,9 @@ class domStuff
         const projectCard=document.createElement('div');
         const projectName=document.createElement('div');
         const deleteBtn=document.createElement('button');
-        projectName.classList.add('projectName');
+        projectName.classList.add('projectCard');
         deleteBtn.classList.add('deleteProject');
-        projectCard.classList.add('projectCard');
+        projectCard.classList.add('projectCardUp');
         projectName.textContent=project.title;
         deleteBtn.textContent="Delete";
         projectCard.appendChild(projectName);
