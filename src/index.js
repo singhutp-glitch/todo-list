@@ -13,14 +13,11 @@ const projectBtn=document.querySelector('.projectBtn');
 projectBtn.addEventListener("click",(event)=>{
 
     console.log("add project");
-    const projectDialog=document.querySelector('dialog#newProject');
-    projectDialog.showModal();
+    domItem.showDialog();
 })
 const inputBtnElement=document.querySelector('.inputProject');
 inputBtnElement.addEventListener('click',()=>{
-    const inputElement=document.querySelector('input#projectTitle');
-    projectItem.addProject(inputElement.value); 
+    let value=domItem.getProjectTitle();
+    projectItem.addProject(value);
     domItem.displayNewProject(projectItem.projects[projectItem.projects.length-1]);
-    console.log("added "+inputElement.value);
-    inputElement.value="";
 })

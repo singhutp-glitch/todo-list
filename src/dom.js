@@ -13,6 +13,21 @@ class domStuff
         
 
     }
+    getProjectTitle()
+    {
+        const inputElement=document.querySelector('input#projectTitle');
+        let value=inputElement.value; 
+        inputElement.value="";
+        return value;
+    }
+
+    
+    showDialog()
+    {
+
+        const projectDialog=document.querySelector('dialog#newProject');
+        projectDialog.showModal();
+    }
     displayNewProject(project)
     {
         const projectCard=document.createElement('div');
