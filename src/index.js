@@ -47,9 +47,14 @@ projectsDiv.addEventListener('click',(event)=>{
     {
         const nameElement=event.target.parentElement.firstElementChild;
         const projectIndex=projectItem.projects.findIndex((element)=>{return(element.title===nameElement.textContent)});
+        if(projectItem.projects[projectIndex].id===domItem.getcurrentProjectId())
+        {
+            domItem.cleanTaskDiv();       
+        }
         console.log(projectIndex);
         projectItem.projects.splice(projectIndex,1);
-        event.target.parentElement.remove();
+        domItem.remove(event.target.parentElement);
+       
 
     }
 })

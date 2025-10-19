@@ -26,6 +26,10 @@ class domStuff
         const taskPriority=taskPriorityElement.value;
         return {taskTitle,taskDescription,taskDate,taskPriority};
     }
+    remove(element)
+    {
+        element.remove();
+    }
     getcurrentProjectId()
     {
         return this.currentProjectId;
@@ -68,6 +72,16 @@ class domStuff
         const taskCard=document.createElement('div');
         taskCard.textContent=task.title;
         tasksDiv.appendChild(taskCard);
+    }
+    cleanTaskDiv()
+    {
+        tasksDiv.innerHTML="";
+        this.currentProjectId=-1;
+        const newTaskBtn=document.createElement('button');
+        newTaskBtn.textContent="Add Task";
+        newTaskBtn.classList.add('taskBtn');
+        tasksDiv.appendChild(newTaskBtn);
+        
     }
     
     displayProject(project)
