@@ -52,7 +52,7 @@ projectsDiv.addEventListener('click',(event)=>{
             domItem.cleanTaskDiv();       
         }
         console.log(projectIndex);
-        projectItem.projects.splice(projectIndex,1);
+        projectItem.deleteProject(projectIndex)
         domItem.remove(event.target.parentElement);
        
 

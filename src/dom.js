@@ -77,11 +77,6 @@ class domStuff
     {
         tasksDiv.innerHTML="";
         this.currentProjectId=-1;
-        const newTaskBtn=document.createElement('button');
-        newTaskBtn.textContent="Add Task";
-        newTaskBtn.classList.add('taskBtn');
-        tasksDiv.appendChild(newTaskBtn);
-        
     }
     
     displayProject(project)
