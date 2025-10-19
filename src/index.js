@@ -43,4 +43,8 @@ projectsDiv.addEventListener('click',(event)=>{
         const project=projectItem.projects.find((element)=>{return(element.title===event.target.textContent)})
         domItem.displayProject(project);
     }
+    else if(event.target.classList.value==="deleteBtn")
+    {
+        console.log('delete project');
+    }
 })
