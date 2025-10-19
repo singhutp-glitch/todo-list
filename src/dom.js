@@ -37,6 +37,11 @@ class domStuff
     
     displayProject(project)
     {
+        const newTaskBtn=document.createElement('button');
+        newTaskBtn.setAttribute('id',project.id);
+        newTaskBtn.textContent="Add Task";
+        newTaskBtn.classList.add('taskBtn');
+        tasksDiv.appendChild(newTaskBtn);
         if(project.taskList.length===0)
         {
             tasksDiv.textContent="NO Tasks";

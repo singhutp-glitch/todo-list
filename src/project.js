@@ -1,9 +1,25 @@
 export {projectList}
+
+class idCount
+{
+    constructor()
+    {
+        this.count=0;
+    }
+    getCount()
+    {
+        this.count++;
+        return this.count;
+    }
+
+}
 class project
 {
-    constructor(title)
+    constructor(title,projectIdCount)
     {
         this.title=title;
+        this.id=projectIdCount.getCount();
+
     }
     taskList=[];
     addTask(title,description, dueDate ,priority)
@@ -37,11 +53,14 @@ class task
 class projectList
 {
     constructor()
-    {}
+    {
+        this.projectIdCount=new idCount();      
+    }
     projects=[];
     addProject(title)
     {
-        this.projects.push(new project(title));
+        console.log(this.projectIdCount.getCount());
+        this.projects.push(new project(title,(this.projectIdCount)));
     }
     deleteProject(num)
     {
