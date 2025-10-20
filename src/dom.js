@@ -80,10 +80,10 @@ class domStuff
         deleteBtn.classList.add('deleteTask');
         taskCard.classList.add('taskCardUp');
         deleteBtn.textContent="DONE";
-        taskName.textContent=task.title;
-        taskDescription.textContent=task.description;
-        taskDate.textContent=task.dueDate;
-        taskPriority.textContent=task.priority;
+        taskName.textContent="Title: "+task.title;
+        taskDescription.textContent="Description: "+task.description;
+        taskDate.textContent="Duedate: "+task.dueDate;
+        taskPriority.textContent="Priority: "+task.priority;
         detailCard.appendChild(taskName);
         detailCard.appendChild(taskDescription);
         detailCard.appendChild(taskDate);
