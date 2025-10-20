@@ -34,7 +34,7 @@ tasksDiv.addEventListener("click",function newTaskFormAndDelete(event){
         const project=projectItem.projects.find((element)=>{
             return (element.id===domItem.getcurrentProjectId());
         })
-        const taskTitle=event.target.parentElement.firstElementChild.textContent;
+        const taskTitle=event.target.parentElement.firstElementChild.firstElementChild.textContent;
         const taskIndex=project.taskList.findIndex((element)=>{return (element.title===taskTitle)});
         project.deleteTask(taskIndex);
         domItem.remove(event.target.parentElement);
