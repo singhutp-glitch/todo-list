@@ -10,7 +10,7 @@ class domStuff
             this.displayNewProject(project);
 
         }
-        this.displayProject(projectItem.projects[0]);
+        // this.displayProject(projectItem.projects[0]);
         
 
     }

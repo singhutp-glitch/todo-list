@@ -4,9 +4,13 @@ import { domStuff} from "./dom.js"
 //main
 
 const projectItem=new projectList();
-projectItem.addProject("NO PROJECT");
-projectItem.projects[0].addTask("test prep","maths test","1-1-25",1)
-projectItem.projects[0].taskList[0].showTask();
+window.addEventListener('beforeunload',function updateLocalStorage(){
+    projectItem.populateStorage();
+})
+// projectItem.addProject("NO PROJECT");
+// console.log(projectItem.projects[0].addTask);
+// projectItem.projects[0].addTask("test prep","maths test","1-1-25",1);
+// projectItem.projects[0].taskList[0].showTask();
 
 const domItem=new domStuff(projectItem);
 const tasksDiv=document.querySelector('div.tasks');
